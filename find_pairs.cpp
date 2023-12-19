@@ -1,39 +1,38 @@
 
-#include<bits/stdc++.h>
-#define ll              long long
-#define pb              push_back
-#define fastread()      (ios_base:: sync_with_stdio(false),cin.tie(NULL));
-using namespace std;  
- // find pairs
-int main()
-{  
-fastread();  
+ #include <bits/stdc++.h>
+#define ll long long
+#define pb push_back
+#define fastread() (ios_base::sync_with_stdio(false), cin.tie(NULL));
+using namespace std;
 
-int n; cin>>n; 
+// Find pairs
+int main() {
+  fastread();
 
-  vector<int> a(n); 
-  for(int i=0; i<n; i++)cin>>a[i]; 
-   
-   sort(a.begin(), a.end()); 
+  ll n;
+  cin >> n;
+
+  vector<ll> a(n), ans(n+1);
+  for (ll i = 0; i < n; i++) {
+    cin >> a[i];
+  }
+
+  ll count = 0;
+  
+  sort(a.begin(), a.end()); 
+
+  for(ll i=0; i<n; i++){
+    ans[i+1] = a[i];
+  }
     
-    int i=0; 
-    int j = n-1;  
-    int ans =0;
-    while(i<j){ 
-        int x = a[i]-a[j]; 
-        int y = i - j;
-        if(x < y)j--; 
-        else if( x > y)i++;
-        else{
-            ans++; 
-            i++; 
-            j--;
-        }
-    }
-   
-   cout<<ans<<endl;
- 
+   for(ll  i=1; i<n+1; i++){
+    if(i == ans[i]){
+      count++; 
+    
+   }  
+   } 
+    
+    cout<< (count*(count+1))/2;
 
- return 0;
-
+  return 0;
 }
