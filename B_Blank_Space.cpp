@@ -1,7 +1,8 @@
-#include<bits/stdc++.h>
+
 #include <cctype>
 #include <iostream>
 #include <cstring> 
+#include <vector> 
 
 #define ll long long
 #define pb push_back
